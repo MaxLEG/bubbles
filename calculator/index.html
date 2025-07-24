@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <input id="userNumOne" />
+    <div id="operator_buttons">
+      <button id="plus" onclick="calc = '+'">+</button>
+      <button id="minus" onclick="calc = '-'">-</button>
+      <button id="times" onclick="calc = '*'">x</button>
+      <button id="divide" onclick="calc = '/'">:</button>
+    </div>
+    <input id="userNumTwo" />
+    <button onclick="calcAction()">Calculate</button>
+    <p id="result"></p>
+    <script>
+      let calc;
+      function calcAction() {
+        let result;
+        let numOne = Number(document.getElementById("userNumOne").value);
+        let numTwo = Number(document.getElementById("userNumTwo").value);
+        switch (calc) {
+          case "+":
+            result = numOne + numTwo;
+            break;
+          case "-":
+            result = numOne - numTwo;
+            break;
+          case "*":
+            result = numOne * numTwo;
+            break;
+          case "/":
+            result = numOne / numTwo;
+            break;
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
